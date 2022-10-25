@@ -137,8 +137,7 @@ class HitCarder(object):
         new_info['city'] = old_info['city']
         new_info['ismoved'] = 0
         new_info['sfzx'] = old_info['sfzx'] # 在校
-        new_info['sfzgn'] = 1
-        new_info['sfymqjczrj'] = 0 # 入境
+        new_info['sfymqjczrj'] =  old_info['sfymqjczrj'] # 入境
         new_info['sfqrxxss'] = 1 # 属实
         new_info['campus'] = '工程师学院' #校区
         new_info['internship'] = old_info['internship'] # 实习
@@ -206,7 +205,7 @@ def main(username, password):
         return 1, '获取信息失败，请手动打卡: ' + str(err)
 
     try:
-        res = hit_carder.post()
+        res = True  #hit_carder.post()
         print(res)
         if str(res['e']) == '0':
             return 0, '打卡成功'
