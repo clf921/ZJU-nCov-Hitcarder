@@ -193,7 +193,7 @@ def main(username, password):
         return 1, '打卡登录失败：' + str(err)
 
     try:
-        ret = True# hit_carder.check_form()
+        ret = True # hit_carder.check_form()
         if not ret:
             return 2, '打卡信息已改变，请手动打卡'
     except Exception as err:
@@ -205,7 +205,7 @@ def main(username, password):
         return 1, '获取信息失败，请手动打卡: ' + str(err)
 
     try:
-        res = True  #hit_carder.post()
+        res = hit_carder.post()
         print(res)
         if str(res['e']) == '0':
             return 0, '打卡成功'
